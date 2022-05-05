@@ -33,7 +33,7 @@ body {
     align-items: center;
 }
 
-.authorization-wrapper {
+.registration-wrapper {
     max-height: 70%;
     grid-column-start: 2;
     grid-column-end: 3;
@@ -41,12 +41,12 @@ body {
     height: 100%;
 }
 
-.authorization {
+.registration {
     height: 100%;
     display: flex;
 }
 
-.authorization__side {
+.registration__side {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,17 +54,8 @@ body {
     border-radius: 50px;
 }
 
-.authorization__left-side {
-    box-sizing: border-box;
-    padding: 5% 0;
-    width: 55%;
-    height: 100%;
-    background: #4F6DFD;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.authorization__right-side {
+.registration__left-side {
+    order: 1;
     box-sizing: border-box;
     padding: 15% 0;
     width: 45%;
@@ -74,18 +65,28 @@ body {
     border-bottom-left-radius: 0;
 }
 
-.authorization__input-icon {
+.registration__right-side {
+    box-sizing: border-box;
+    padding: 5% 0;
+    width: 55%;
+    height: 100%;
+    background: #4F6DFD;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.registration__input-icon {
     width: 24px;
     height: 24px;
 }
 
-.authorization__titles-wrapper {
+.registration__titles-wrapper {
     width: 80%;
     display: flex;
     justify-content: center;
 }
 
-.authorization__title-wrapper {
+.registration__title-wrapper {
     pointer-events: none;
     cursor: default;
 }
@@ -94,7 +95,7 @@ body {
     display: none;
 }
 
-.authorization__title {
+.registration__title {
     font-style: normal;
     font-weight: 800;
     font-size: 36px;
@@ -102,7 +103,7 @@ body {
     color: #FFFFFF;
 }
 
-.authorization__subtitle {
+.registration__subtitle {
     max-width: 80%;
     font-style: normal;
     font-weight: 500;
@@ -112,14 +113,14 @@ body {
     text-align: center;
 }
 
-.authorization__inputs {
+.registration__inputs {
     padding: 0 10%;
     display: flex;
     flex-direction: column;
     row-gap: 30px;
 }
 
-.authorization__input-wrapper {
+.registration__input-wrapper {
     width: 100%;
     display: flex;
     gap: 12px;
@@ -130,7 +131,7 @@ body {
     border-radius: 10px;
 }
 
-.authorization__input {
+.registration__input {
     width: 100%;
     height: 100%;
     background: inherit;
@@ -143,20 +144,11 @@ body {
     color: #FFFFFF;
 }
 
-.authorization__input::placeholder {
+.registration__input::placeholder {
     color: #FAFAFA;
 }
 
-.authorization__forgot-password {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 29px;
-    text-decoration-line: underline;
-    color: #FFFFFF;
-}
-
-.authorization__button {
+.registration__button {
     padding: 10px 80px;
     font-style: normal;
     font-weight: 700;
@@ -213,13 +205,13 @@ body {
 }
 
 @media (max-height: 900px) {
-    .authorization-wrapper {
+    .registration-wrapper {
         max-height: 100%;
     }
 }
 
 @media (max-height: 1130px) {
-    .authorization-wrapper {
+    .registration-wrapper {
         max-height: 80%;
     }
 }
@@ -235,29 +227,29 @@ body {
         grid-template-columns: none;
     }
 
-    .authorization-wrapper {
+    .registration-wrapper {
         max-height: 100%;
         grid-column-start: 1;
         grid-column-end: 3;
     }
 
-    .authorization__side {
+    .registration__side {
         border-radius: 0;
     }
 
-    .authorization__left-side {
-        width: 100%;
-    }
-
-    .authorization__right-side {
+    .registration__left-side {
         display: none;
     }
 
-    .authorization__titles-wrapper {
+    .registration__right-side {
+        width: 100%;
+    }
+
+    .registration__titles-wrapper {
         justify-content: space-between;
     }
 
-    .authorization__title-wrapper {
+    .registration__title-wrapper {
         pointer-events: auto;
         cursor: pointer;
     }
@@ -277,40 +269,34 @@ body {
 }
 
 @media (max-width: 550px) {
-    .authorization__left-side {
+    .registration__right-side {
         justify-content: flex-start;
     }
 
-    .authorization__title {
+    .registration__title {
         font-size: 20px;
         line-height: 24px;
     }
 
-    .authorization__inputs {
+    .registration__inputs {
         margin-top: auto;
     }
 
-    .authorization__input-wrapper {
+    .registration__input-wrapper {
         padding: 8px 20px;
     }
 
-    .authorization__input-icon {
+    .registration__input-icon {
         width: 18px;
         height: 18px;
     }
 
-    .authorization__input {
+    .registration__input {
         font-size: 16px;
         line-height: 20px;
     }
 
-    .authorization__forgot-password {
-        margin-top: 10%;
-        font-size: 16px;
-        line-height: 20px;
-    }
-
-    .authorization__button {
+    .registration__button {
         margin-top: 10%;
         margin-bottom: auto;
         padding: 7px 40px;
