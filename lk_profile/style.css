@@ -133,13 +133,55 @@ input {
 
 .main-wrapper {
     box-sizing: border-box;
-    padding: 2% 4%;
+    padding: 5% 4%;
     width: 100%;
     height: 100%;
     display: grid;
     grid-template-columns: 5fr 7fr;
-    grid-template-rows: 6fr 6fr;
+    grid-template-rows: 10fr 2fr;
     gap: 2%;
+}
+
+.main__side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.avatar__wrapper {
+    display: flex;
+    justify-content: center;
+    height: 80%;
+}
+
+.avatar__picture {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.upload__wrapper {
+    display: flex;
+    justify-content: center;
+    height: 10%;
+}
+
+.upload__button {
+    padding: 10px 30px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 29px;
+    color: #FFFFFF;
+    background: #5A75F8;
+    border-radius: 10px;
+    border: none;
+    outline: none;
 }
 
 .main__widget {
@@ -151,110 +193,22 @@ input {
     filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.25));
 }
 
-.widget_profile {
-    display: flex;
-    flex-direction: column;
-    padding: 10%;
-}
-
-.profile__row:not(:last-child) {
-    margin-bottom: auto;
-}
-
-.profile__row {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    width: 100%;
-    border-bottom: 1px solid #223345;
-}
-
-.profile__text {
-    margin-left: 10px;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 29px;
-    color: #223345;
-}
-
-.widget_statistics {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    padding: 5% 10%;
-    column-gap: 20px;
-}
-
-.statistics__block {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 24px;
-}
-
-.statistics__graph {
-    width: 100%;
-    height: 100%;
-    background: #C3DEFFFF; /* заглушка */
-}
-
-.statistics__title {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 29px;
-    text-align: center;
-    color: #223345;
-}
-
-.widget_add {
+.widget_edit {
+    gap: 5%;
     padding: 5% 10%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.add__titles-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.add__title {
-    font-style: normal;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 29px;
-    color: #223345;
-}
-
-.add__title-wrapper.add__title_active {
-    display: block;
-}
-
-.add__title_active {
-    border-bottom: 3px solid #FB9B7A;
-}
-
-.add__expand-wrapper {
-    display: none;
-}
-
-.add__expand {
-    stroke: #233446;
-    stroke-width: 2;
-}
-
-.add__inputs-wrapper {
-    height: 60%;
+.edit__inputs-wrapper {
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.add__input-wrapper {
+.edit__input-wrapper {
     width: 100%;
     border-bottom: 1px solid #223345;
     display: flex;
@@ -262,13 +216,13 @@ input {
     position: relative;
 }
 
-.add__input {
+.edit__input {
     width: 100%;
     border: none;
     outline: none;
 }
 
-.add__input, .add__input_placeholder, .add__input::placeholder {
+.edit__input, .edit__input_placeholder, .edit__input::placeholder {
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -276,20 +230,20 @@ input {
     color: #223345;
 }
 
-.add__input_placeholder {
+.edit__input_placeholder {
     margin-left: 2%;
 }
 
-.add__input {
+.edit__input {
     padding: 0 2%;
 }
 
-.add__input-icon {
+.edit__input-icon {
     width: 22px;
     height: 9px;
 }
 
-.add__category-list {
+.edit__category-list {
     z-index: 1;
     position: absolute;
     display: none;
@@ -303,17 +257,18 @@ input {
     filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.25));
 }
 
-.add__button-wrapper {
+.edit__button-wrapper, .delete__button-wrapper {
     display: flex;
     justify-content: center;
+    align-items: flex-end;
 }
 
-.add__button {
+.edit__button {
     padding: 3px 0;
     width: 30%;
     font-style: normal;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 29px;
     color: #FFFFFF;
     background: #11A1FD;
@@ -322,76 +277,43 @@ input {
     outline: none;
 }
 
-.widget_history {
-    padding-top: 10px;
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-}
-
-.history__titles-wrapper {
-    border-bottom: 1px solid #E7F1F7;
-}
-
-.history__title {
+.delete__button {
+    padding: 10px 20px;
+    height: max-content;
     font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
-    color: #7E9FB6;
-}
-
-.history__titles-wrapper, .history__row {
-    text-align: center;
-    box-sizing: border-box;
-    display: grid;
-    grid-template-columns: 2fr 2fr 2fr 2fr 4fr;
-    width: 100%;
-    padding: 0 10px;
-}
-
-.history__text-wrapper {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-.history__text {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 22px;
-    color: #223345;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 29px;
+    color: #FFFFFF;
+    background: #FF5870;
+    border-radius: 10px;
+    border: none;
+    outline: none;
 }
 
 @media (max-width: 1453px) {
-    .profile__text {
+
+    .edit__title {
         font-size: 16px;
     }
 
-    .statistics__title {
-        font-size: 16px;
-    }
-
-    .add__title {
-        font-size: 16px;
-    }
-
-    .add__input, .add__input_placeholder, .add__input::placeholder {
+    .edit__input, .edit__input_placeholder, .edit__input::placeholder {
         font-size: 14px;
     }
+}
 
-    .history__title {
-        font-size: 12px;
-    }
-
-    .history__text {
-        font-size: 10px;
-        font-weight: 500;
+@media (max-width: 1265px) {
+    .main-wrapper {
+        grid-template-columns: 7fr 5fr;
     }
 }
 
 @media (max-width: 1060px) {
+    .main-wrapper {
+        padding: 10% 4%;
+        grid-template-columns: 6fr 6fr;
+    }
+
     .menu-wrapper {
         width: 8%;
     }
@@ -413,53 +335,8 @@ input {
     }
 }
 
-@media (max-width: 960px) {
-    .history__titles-wrapper {
-        display: none;
-    }
-
-    .history__row {
-        text-align: inherit ;
-        grid-template-rows: 1fr 1fr 1fr;
-        grid-template-columns: 2fr 5fr;
-    }
-
-    .history__text-wrapper:nth-child(2n) {
-        text-align: right;
-    }
-
-    .history__comment-text {
-        grid-column-start: 1;
-        grid-column-end: 3;
-    }
-
-    .add__title-wrapper {
-        display: none;
-    }
-
-    .add__expand-wrapper {
-        display: block;
-    }
-}
-
 @media (max-width: 860px) {
-    .profile__text {
-        font-size: 12px;
-    }
-
-    .widget_statistics {
-        padding: 5%;
-    }
-
-    .statistics__title {
-        font-size: 12px;
-    }
-
-    .add__title {
-        font-size: 12px;
-    }
-
-    .add__input, .add__input_placeholder, .add__input::placeholder {
+    .edit__input, .edit__input_placeholder, .edit__input::placeholder {
         font-size: 12px;
     }
 }
@@ -512,19 +389,35 @@ input {
         flex-direction: column;
     }
 
-    .add__input, .add__input_placeholder, .add__input::placeholder {
+    .main__side {
+        gap: 20px;
+    }
+
+    .delete__button-wrapper, .widget_edit {
+        order: 1;
+    }
+
+    .delete__button, .upload__button, .edit__button {
+        font-size: 16px;
+    }
+
+    .upload__button {
+        padding: 5px 20px;
+    }
+
+    .avatar__wrapper {
+        max-width: 50%;
+    }
+
+    .avatar__picture, .avatar__wrapper, .upload__wrapper  {
+        height: auto;
+    }
+
+    .edit__input, .edit__input_placeholder, .edit__input::placeholder {
         line-height: 20px;
     }
 
-    .widget_profile, .widget_add, .add__inputs-wrapper {
+    .widget_edit, .edit__inputs-wrapper {
         gap: 10px;
-    }
-
-    .statistics__title {
-        line-height: 16px;
-    }
-
-    .widget_history {
-        padding: 5%;
     }
 }
