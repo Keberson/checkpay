@@ -43,6 +43,10 @@ body {
     background: radial-gradient(59.45% 156.57% at 50% 50%, #4B64E2 0.03%, #B45EBD 100%);
 }
 
+.title__text {
+    font: inherit;
+}
+
 .header {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -192,9 +196,6 @@ body {
     display: flex;
     justify-content: center;
     border-bottom: 0.5px solid #000685;
-}
-
-.feedback__title {
     font-weight: 900;
     font-size: 48px;
     line-height: 78px;
@@ -225,6 +226,11 @@ body {
     outline: none;
     border-bottom: 1px solid #000685;
     box-sizing: border-box;
+}
+
+.input_invalid {
+    margin-top: 10px;
+    color: #ab0000;
 }
 
 .feedback__input::placeholder {
@@ -284,7 +290,7 @@ body {
 
 
 @media (max-width: 1352px) {
-    .main__title, .feedback__title {
+    .main__title, .feedback__title-wrapper {
         font-size: 36px;
     }
 
@@ -323,7 +329,7 @@ body {
 }
 
 @media (max-width: 1083px) {
-    .main__title, .feedback__title {
+    .main__title, .feedback__title-wrapper {
         font-size: 32px;
     }
 }
@@ -394,7 +400,7 @@ body {
         stroke-width: 2;
     }
 
-    .main__title, .feedback__title {
+    .main__title, .feedback__title-wrapper {
         font-size: 28px;
     }
 
