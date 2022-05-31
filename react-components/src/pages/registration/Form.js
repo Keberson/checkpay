@@ -52,7 +52,7 @@ function Form() {
     };
 
     return (
-        <div className="registration__inputs" onSubmit={submitForm}>
+        <form className="registration__inputs" onSubmit={submitForm}>
             <div className="registration__field">
                 <div className="registration__input-wrapper">
                     <svg className="registration__input-icon" viewBox="0 0 24 24" fill="none"
@@ -127,8 +127,7 @@ function Form() {
             <input type="submit"
                    className="registration__button button"
                    value="Sign Up"/>
-        </div>
-
+        </form>
     );
 }
 
