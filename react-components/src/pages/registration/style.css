@@ -1,0 +1,317 @@
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.link:visited {
+    color: inherit;
+}
+
+.button {
+    cursor: pointer;
+}
+
+.title__text {
+    font: inherit;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #EAF3FF;
+}
+
+.container {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 95% 5%;
+    grid-template-columns: 10% 80% 10%;
+    align-items: center;
+}
+
+.registration-wrapper {
+    max-height: 70%;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    padding: 2% 0;
+    height: 100%;
+}
+
+.registration {
+    height: 100%;
+    display: flex;
+}
+
+.registration__side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 50px;
+}
+
+.registration__right-side {
+    order: 1;
+    box-sizing: border-box;
+    padding: 15% 0;
+    width: 45%;
+    height: 100%;
+    background: #3F5EF0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.registration__left-side {
+    box-sizing: border-box;
+    padding: 20px 0;
+    width: 55%;
+    height: 100%;
+    background: #4F6DFD;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.registration__input-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.registration__titles-wrapper {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.registration__title-wrapper {
+    pointer-events: none;
+    cursor: default;
+}
+
+.title_small-screen {
+    display: none;
+}
+
+.registration__title {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 44px;
+    color: #FFFFFF;
+}
+
+.registration__subtitle {
+    max-width: 80%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.registration__inputs {
+    justify-content: center;
+    height: 100%;
+    padding: 0 10%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.registration__input-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 10px 24px;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.registration__input {
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    outline: none;
+    border: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+}
+
+.registration__input::placeholder {
+    color: #FAFAFA;
+}
+
+.input_invalid {
+    color: #ab0000;
+}
+
+.registration__button {
+    padding: 10px 80px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    color: #FFFFFF;
+    background: #38B49C;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+}
+
+.registration__submit .registration__button {
+    width: 100%;
+}
+
+.footer {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__right-side {
+    display: flex;
+    align-items: center;
+}
+
+.footer__location {
+    display: none;
+    list-style: none;
+    position: absolute;
+    bottom: 5%;
+}
+
+.footer__location-active {
+    cursor: pointer;
+    margin-right: 30px;
+    display: flex;
+}
+
+.location-active__arrow {
+    margin-left: 5px;
+    width: 15px;
+    height: 10px;
+    stroke-width: 2;
+}
+
+.footer__github-wrapper {
+    display: flex;
+    width: 30px;
+    height: 30px;
+}
+
+.footer__github {
+    width: 100%;
+}
+
+@media (max-height: 900px) {
+    .registration-wrapper {
+        max-height: 100%;
+    }
+}
+
+@media (max-height: 1130px) {
+    .registration-wrapper {
+        max-height: 80%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 2% 96% 2%;
+    }
+}
+
+@media (max-width: 750px) {
+    .container {
+        grid-template-columns: none;
+    }
+
+    .registration-wrapper {
+        max-height: 100%;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .registration__side {
+        border-radius: 0;
+    }
+
+    .registration__right-side {
+        display: none;
+    }
+
+    .registration__left-side {
+        width: 100%;
+    }
+
+    .registration__titles-wrapper {
+        justify-content: space-between;
+    }
+
+    .registration__title-wrapper {
+        pointer-events: auto;
+        cursor: pointer;
+    }
+
+    .title_small-screen {
+        display: block;
+    }
+
+    .title_active {
+        border-bottom: 2px solid #F2D539;
+    }
+
+    .footer {
+        padding: 0 10px;
+        grid-column-start: 1;
+    }
+}
+
+@media (max-width: 550px) {
+    .registration__title {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .registration__input-wrapper {
+        padding: 8px 20px;
+    }
+
+    .registration__input-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .registration__input {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .registration__button {
+        margin-top: 10%;
+        padding: 7px 40px;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .footer {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .footer__github-wrapper {
+        width: 20px;
+        height: 20px;
+    }
+}

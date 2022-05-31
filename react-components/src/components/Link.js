@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Link({classes, link, value}) {
     return (
         <div className={classes + "-wrapper"}>
-            <a href={link} className={classes}>{value}</a>
+            <a href={link} className={classes + " link"}>{value}</a>
         </div>
     );
 }
