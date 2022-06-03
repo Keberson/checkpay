@@ -5,11 +5,11 @@ import Location from "./Location";
 
 function Header() {
     return (
-        <div className="header">
-            <Title value="Check Pay" classes="header__title" size={3} />
-            <div className="header__right-side">
-                <Auth position="header" />
-                <Location position="header" />
+        <div className="main-header">
+            <Title value="Check Pay" classes="main-header__title" size={3} />
+            <div className="main-header__right-side">
+                <Auth position="main-header" />
+                <Location position="main-header" />
             </div>
         </div>
     );

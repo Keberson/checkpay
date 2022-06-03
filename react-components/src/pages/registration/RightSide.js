@@ -1,6 +1,7 @@
 import React from "react";
 import Title from "../../components/Title";
 import Button from "../../components/Button";
+import {Link} from "react-router-dom";
 
 function RightSide() {
     return (
@@ -8,7 +9,9 @@ function RightSide() {
             <Title classes="registration__title" value="Hello, Friend!" size={1}/>
             <Title classes="registration__subtitle" value="Enter your personal details and join to pur
                 community" />
-            <Button position="registration" value="Sign In" />
+            <Link to='/auth'>
+                <Button position="registration" value="Sign In" />
+            </Link>
         </div>
     );
 }

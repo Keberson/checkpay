@@ -4,9 +4,9 @@ import Form from "./Form";
 
 function Feedback() {
     return (
-        <div className="feedback">
-            <div className="container">
-                <Title classes="feedback__title-wrapper" value="Contact Us" size={1} />
+        <div className="main-feedback">
+            <div className="main-container">
+                <Title classes="main-feedback__title-wrapper" value="Contact Us" size={1} />
                 <Form />
             </div>
         </div>

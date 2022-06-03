@@ -6,7 +6,7 @@ import RightSide from "./RightSide";
 
 function Registration() {
     return (
-        <div className="container">
+        <div className="reg-container">
             <div className="registration-wrapper">
                 <div className="registration">
                     <LeftSide />

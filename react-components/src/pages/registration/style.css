@@ -24,7 +24,7 @@ body {
     background: #EAF3FF;
 }
 
-.container {
+.reg-container {
     height: 100%;
     display: grid;
     grid-template-rows: 95% 5%;
@@ -171,7 +171,7 @@ body {
     width: 100%;
 }
 
-.footer {
+.reg-footer {
     grid-column-start: 2;
     grid-column-end: 3;
     display: flex;
@@ -179,38 +179,38 @@ body {
     align-items: center;
 }
 
-.footer__right-side {
+.reg-footer__right-side {
     display: flex;
     align-items: center;
 }
 
-.footer__location {
+.reg-footer__location {
     display: none;
     list-style: none;
     position: absolute;
     bottom: 5%;
 }
 
-.footer__location-active {
+.reg-footer__location-active {
     cursor: pointer;
     margin-right: 30px;
     display: flex;
 }
 
-.location-active__arrow {
+.reg-location-active__arrow {
     margin-left: 5px;
     width: 15px;
     height: 10px;
     stroke-width: 2;
 }
 
-.footer__github-wrapper {
+.reg-footer__github-wrapper {
     display: flex;
     width: 30px;
     height: 30px;
 }
 
-.footer__github {
+.reg-footer__github {
     width: 100%;
 }
 
@@ -227,13 +227,13 @@ body {
 }
 
 @media (max-width: 1024px) {
-    .container {
+    .reg-container {
         grid-template-columns: 2% 96% 2%;
     }
 }
 
 @media (max-width: 750px) {
-    .container {
+    .reg-container {
         grid-template-columns: none;
     }
 
@@ -272,7 +272,7 @@ body {
         border-bottom: 2px solid #F2D539;
     }
 
-    .footer {
+    .reg-footer {
         padding: 0 10px;
         grid-column-start: 1;
     }
@@ -305,12 +305,12 @@ body {
         line-height: 20px;
     }
 
-    .footer {
+    .reg-footer {
         font-size: 12px;
         line-height: 15px;
     }
 
-    .footer__github-wrapper {
+    .reg-footer__github-wrapper {
         width: 20px;
         height: 20px;
     }

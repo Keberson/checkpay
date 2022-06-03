@@ -11,7 +11,7 @@ function Text({ classes, value }) {
 
 Text.propTypes = {
     classes: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired
 }
 
 export default Text;

@@ -2,16 +2,25 @@ import React from "react";
 import PropTypes from 'prop-types'
 
 function Title({ classes, value, size }) {
-    let title = <h3 className="title__text">{value}</h3>;
+    let title;
 
-    if (size) {
-        if (size === 1) {
+    switch (size) {
+        case 1:
             title = <h1 className="title__text">{value}</h1>
-        } else if (size === 3) {
+            break;
+        case 2:
+            title = <h2 className="title__text">{value}</h2>
+            break;
+        case 3:
+        default:
             title = <h3 className="title__text">{value}</h3>
-        } else if (size === 5) {
+            break;
+        case 4:
+            title = <h4 className="title__text">{value}</h4>
+            break;
+        case 5:
             title = <h5 className="title__text">{value}</h5>
-        }
+            break;
     }
 
     return (
@@ -23,7 +32,7 @@ function Title({ classes, value, size }) {
 
 Title.propTypes = {
     classes: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     size: PropTypes.number
 }
 

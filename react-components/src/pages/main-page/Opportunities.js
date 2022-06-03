@@ -131,8 +131,8 @@ const opportunitiesList = [
 
 function Opportunities() {
     return (
-        <div className="opportunities">
-            <div className="container_grid">
+        <div className="main-opportunities">
+            <div className="main-container_grid">
                 { opportunitiesList.map((value, index) => {
                     return <Widget key={index} widgetObject={value} />
                 }) }

@@ -6,7 +6,7 @@ import RightSide from "./RightSide";
 
 function Registration() {
     return (
-        <div className="container">
+        <div className="auth-container">
             <div className="authorization-wrapper">
                 <div className="authorization">
                     <LeftSide />

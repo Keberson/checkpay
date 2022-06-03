@@ -42,10 +42,10 @@ function Form() {
     };
 
     return (
-        <form className="feedback__inputs" onSubmit={submitForm}>
-            <div className="feedback__input-wrapper">
+        <form className="main-feedback__inputs" onSubmit={submitForm}>
+            <div className="main-feedback__input-wrapper">
                 <input type="text"
-                       className="feedback__input input_name"
+                       className="main-feedback__input main-input_name"
                        placeholder="Name"
                        value={name}
                        onChange={(e) => setName(e.target.value)}
@@ -53,9 +53,9 @@ function Form() {
                        required/>
                 {!validName && <p className="input_invalid">Name's length must be more than 3 symbols</p>}
             </div>
-            <div className="feedback__input-wrapper">
+            <div className="main-feedback__input-wrapper">
                 <input type="text"
-                       className="feedback__input input_email"
+                       className="main-feedback__input main-input_email"
                        placeholder="Email"
                        value={email}
                        onChange={(e) => setEmail(e.target.value)}
@@ -63,9 +63,9 @@ function Form() {
                        required/>
                 {!validEmail && <p className="input_invalid">Incorrect email</p>}
             </div>
-            <div className="feedback__input-wrapper input_messages">
+            <div className="main-feedback__input-wrapper main-input_messages">
                 <input type="text"
-                       className="feedback__input"
+                       className="main-feedback__input"
                        placeholder="Message"
                        value={msg}
                        onChange={(e) => setMsg(e.target.value)}
@@ -73,9 +73,9 @@ function Form() {
                        required/>
                 {!validMsg && <p className="input_invalid">Message's length must be more than 3 symbols</p>}
             </div>
-            <div className="feedback__button-wrapper">
+            <div className="main-feedback__button-wrapper">
                 <input type="submit"
-                       className="feedback__button button"
+                       className="main-feedback__button button"
                        value="Send"/>
             </div>
         </form>
