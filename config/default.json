@@ -1,0 +1,22 @@
+{
+  "port": 5000,
+  "jwtSecret": "student's education work - Check Pay",
+  "db": {
+    "connectionLimit": 5,
+    "host": "localhost",
+    "user": "root",
+    "password": "root",
+    "database": "check_pay"
+  },
+  "usersTable": "users",
+  "userInfoTable": "user_information",
+  "usersMessageTable": "users_message",
+  "usersHistoryTable": "users_history",
+  "mail": {
+    "host": "smtp.mail.ru",
+    "port": 465,
+    "secure": true,
+    "user": "checkpayservice@mail.ru",
+    "pass": "ptu1ouMEC0vf5xwU8kyJ"
+  }
+}
