@@ -1,4 +1,4 @@
-.forgotPas-container {
+.auth-container {
     height: 100%;
     display: grid;
     grid-template-rows: 95% 5%;
@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.forgotPas-wrapper {
+.authorization-wrapper {
     max-height: 70%;
     grid-column-start: 2;
     grid-column-end: 3;
@@ -14,12 +14,12 @@
     height: 100%;
 }
 
-.forgotPas {
+.authorization {
     height: 100%;
     display: flex;
 }
 
-.forgotPas__side {
+.authorization__side {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,7 +27,7 @@
     border-radius: 50px;
 }
 
-.forgotPas__left-side {
+.authorization__left-side {
     box-sizing: border-box;
     padding: 5% 0;
     width: 55%;
@@ -37,7 +37,7 @@
     border-bottom-right-radius: 0;
 }
 
-.forgotPas__right-side {
+.authorization__right-side {
     box-sizing: border-box;
     padding: 15% 0;
     width: 45%;
@@ -47,23 +47,27 @@
     border-bottom-left-radius: 0;
 }
 
-.forgotPas__input-icon {
+.authorization__input-icon {
     width: 24px;
     height: 24px;
 }
 
-.forgotPas__titles-wrapper {
+.authorization__titles-wrapper {
     width: 80%;
     display: flex;
     justify-content: center;
+}
+
+.authorization__title-wrapper {
+    pointer-events: none;
+    cursor: default;
 }
 
 .title_small-screen {
     display: none;
 }
 
-.forgotPas__title {
-    text-align: center;
+.authorization__title {
     font-style: normal;
     font-weight: 800;
     font-size: 36px;
@@ -71,7 +75,7 @@
     color: #FFFFFF;
 }
 
-.forgotPas__subtitle {
+.authorization__subtitle {
     max-width: 80%;
     font-style: normal;
     font-weight: 500;
@@ -81,23 +85,23 @@
     text-align: center;
 }
 
-.forgotPas__inputs {
+.authorization__inputs {
     width: 100%;
     display: flex;
     flex-direction: column;
     row-gap: 30px;
 }
 
-.forgotPas__form {
+.authorization__form {
     height: 100%;
     width: 70%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
 }
 
-.forgotPas__input-wrapper {
+.authorization__input-wrapper {
     width: 100%;
     display: flex;
     gap: 12px;
@@ -108,7 +112,7 @@
     border-radius: 10px;
 }
 
-.forgotPas__input {
+.authorization__input {
     width: 100%;
     height: 100%;
     background: inherit;
@@ -121,11 +125,11 @@
     color: #FFFFFF;
 }
 
-.forgotPas__input::placeholder {
+.authorization__input::placeholder {
     color: #FAFAFA;
 }
 
-.forgotPas__forgot-password {
+.authorization__forgot-password {
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
@@ -134,7 +138,7 @@
     color: #FFFFFF;
 }
 
-.forgotPas__button {
+.authorization__button {
     padding: 10px 80px;
     font-style: normal;
     font-weight: 700;
@@ -147,7 +151,7 @@
     border: none;
 }
 
-.forgotPas-footer {
+.auth-footer {
     grid-column-start: 2;
     grid-column-end: 3;
     display: flex;
@@ -155,84 +159,89 @@
     align-items: center;
 }
 
-.forgotPas-footer__right-side {
+.auth-footer__right-side {
     display: flex;
     align-items: center;
 }
 
-.forgotPas-footer__location {
+.auth-footer__location {
     display: none;
     list-style: none;
     position: absolute;
     bottom: 5%;
 }
 
-.forgotPas-footer__location-active {
+.auth-footer__location-active {
     cursor: pointer;
     margin-right: 30px;
     display: flex;
 }
 
-.forgotPas-location-active__arrow {
+.auth-location-active__arrow {
     margin-left: 5px;
     width: 15px;
     height: 10px;
     stroke-width: 2;
 }
 
-.forgotPas-footer__github-wrapper {
+.auth-footer__github-wrapper {
     display: flex;
     width: 30px;
     height: 30px;
 }
 
-.forgotPas-footer__github {
+.auth-footer__github {
     width: 100%;
 }
 
-.forgotPas__back {
-    display: none;
-}
-
 @media (max-height: 900px) {
-    .forgotPas-wrapper {
+    .authorization-wrapper {
         max-height: 100%;
     }
 }
 
 @media (max-height: 1130px) {
-    .forgotPas-wrapper {
+    .authorization-wrapper {
         max-height: 80%;
     }
 }
 
 @media (max-width: 1024px) {
-    .forgotPas-container {
+    .auth-container {
         grid-template-columns: 2% 96% 2%;
     }
 }
 
 @media (max-width: 750px) {
-    .forgotPas-container {
+    .auth-container {
         grid-template-columns: none;
     }
 
-    .forgotPas-wrapper {
+    .authorization-wrapper {
         max-height: 100%;
         grid-column-start: 1;
         grid-column-end: 3;
     }
 
-    .forgotPas__side {
+    .authorization__side {
         border-radius: 0;
     }
 
-    .forgotPas__left-side {
+    .authorization__left-side {
         width: 100%;
     }
 
-    .forgotPas__right-side {
+    .authorization__right-side {
         display: none;
+    }
+
+    .authorization__titles-wrapper {
+        justify-content: space-between;
+    }
+
+    .authorization__title-wrapper {
+        pointer-events: auto;
+        cursor: pointer;
     }
 
     .title_small-screen {
@@ -243,51 +252,47 @@
         border-bottom: 2px solid #F2D539;
     }
 
-    .forgotPas-footer {
+    .auth-footer {
         padding: 0 10px;
         grid-column-start: 1;
-    }
-
-    .forgotPas__back {
-        display: block;
     }
 }
 
 @media (max-width: 550px) {
-    .forgotPas__left-side {
+    .authorization__left-side {
         justify-content: flex-start;
     }
 
-    .forgotPas__title {
+    .authorization__title {
         font-size: 20px;
         line-height: 24px;
     }
 
-    .forgotPas__inputs {
+    .authorization__inputs {
         margin-top: auto;
     }
 
-    .forgotPas__input-wrapper {
+    .authorization__input-wrapper {
         padding: 8px 20px;
     }
 
-    .forgotPas__input-icon {
+    .authorization__input-icon {
         width: 18px;
         height: 18px;
     }
 
-    .forgotPas__input {
+    .authorization__input {
         font-size: 16px;
         line-height: 20px;
     }
 
-    .forgotPas__forgot-password {
+    .authorization__forgot-password {
         margin-top: 10%;
         font-size: 16px;
         line-height: 20px;
     }
 
-    .forgotPas__button {
+    .authorization__button {
         margin-top: 10%;
         margin-bottom: auto;
         padding: 7px 40px;
@@ -295,12 +300,12 @@
         line-height: 20px;
     }
 
-    .forgotPas-footer {
+    .auth-footer {
         font-size: 12px;
         line-height: 15px;
     }
 
-    .forgotPas-footer__github-wrapper {
+    .auth-footer__github-wrapper {
         width: 20px;
         height: 20px;
     }

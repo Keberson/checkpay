@@ -1,4 +1,4 @@
-.forgotPas-container {
+.reg-container {
     height: 100%;
     display: grid;
     grid-template-rows: 95% 5%;
@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.forgotPas-wrapper {
+.registration-wrapper {
     max-height: 70%;
     grid-column-start: 2;
     grid-column-end: 3;
@@ -14,12 +14,12 @@
     height: 100%;
 }
 
-.forgotPas {
+.registration {
     height: 100%;
     display: flex;
 }
 
-.forgotPas__side {
+.registration__side {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,17 +27,8 @@
     border-radius: 50px;
 }
 
-.forgotPas__left-side {
-    box-sizing: border-box;
-    padding: 5% 0;
-    width: 55%;
-    height: 100%;
-    background: #4F6DFD;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.forgotPas__right-side {
+.registration__right-side {
+    order: 1;
     box-sizing: border-box;
     padding: 15% 0;
     width: 45%;
@@ -47,23 +38,37 @@
     border-bottom-left-radius: 0;
 }
 
-.forgotPas__input-icon {
+.registration__left-side {
+    box-sizing: border-box;
+    padding: 20px 0;
+    width: 55%;
+    height: 100%;
+    background: #4F6DFD;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.registration__input-icon {
     width: 24px;
     height: 24px;
 }
 
-.forgotPas__titles-wrapper {
+.registration__titles-wrapper {
     width: 80%;
     display: flex;
     justify-content: center;
+}
+
+.registration__title-wrapper {
+    pointer-events: none;
+    cursor: default;
 }
 
 .title_small-screen {
     display: none;
 }
 
-.forgotPas__title {
-    text-align: center;
+.registration__title {
     font-style: normal;
     font-weight: 800;
     font-size: 36px;
@@ -71,7 +76,7 @@
     color: #FFFFFF;
 }
 
-.forgotPas__subtitle {
+.registration__subtitle {
     max-width: 80%;
     font-style: normal;
     font-weight: 500;
@@ -81,23 +86,17 @@
     text-align: center;
 }
 
-.forgotPas__inputs {
-    width: 100%;
+.registration__inputs {
+    justify-content: center;
+    height: 100%;
+    padding: 0 10%;
     display: flex;
     flex-direction: column;
     row-gap: 30px;
 }
 
-.forgotPas__form {
-    height: 100%;
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-.forgotPas__input-wrapper {
+.registration__input-wrapper {
+    position: relative;
     width: 100%;
     display: flex;
     gap: 12px;
@@ -108,7 +107,7 @@
     border-radius: 10px;
 }
 
-.forgotPas__input {
+.registration__input {
     width: 100%;
     height: 100%;
     background: inherit;
@@ -121,20 +120,15 @@
     color: #FFFFFF;
 }
 
-.forgotPas__input::placeholder {
+.registration__input::placeholder {
     color: #FAFAFA;
 }
 
-.forgotPas__forgot-password {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 29px;
-    text-decoration-line: underline;
-    color: #FFFFFF;
+.input_invalid {
+    color: #ab0000;
 }
 
-.forgotPas__button {
+.registration__button {
     padding: 10px 80px;
     font-style: normal;
     font-weight: 700;
@@ -147,7 +141,11 @@
     border: none;
 }
 
-.forgotPas-footer {
+.registration__submit .registration__button {
+    width: 100%;
+}
+
+.reg-footer {
     grid-column-start: 2;
     grid-column-end: 3;
     display: flex;
@@ -155,84 +153,89 @@
     align-items: center;
 }
 
-.forgotPas-footer__right-side {
+.reg-footer__right-side {
     display: flex;
     align-items: center;
 }
 
-.forgotPas-footer__location {
+.reg-footer__location {
     display: none;
     list-style: none;
     position: absolute;
     bottom: 5%;
 }
 
-.forgotPas-footer__location-active {
+.reg-footer__location-active {
     cursor: pointer;
     margin-right: 30px;
     display: flex;
 }
 
-.forgotPas-location-active__arrow {
+.reg-location-active__arrow {
     margin-left: 5px;
     width: 15px;
     height: 10px;
     stroke-width: 2;
 }
 
-.forgotPas-footer__github-wrapper {
+.reg-footer__github-wrapper {
     display: flex;
     width: 30px;
     height: 30px;
 }
 
-.forgotPas-footer__github {
+.reg-footer__github {
     width: 100%;
 }
 
-.forgotPas__back {
-    display: none;
-}
-
 @media (max-height: 900px) {
-    .forgotPas-wrapper {
+    .registration-wrapper {
         max-height: 100%;
     }
 }
 
 @media (max-height: 1130px) {
-    .forgotPas-wrapper {
+    .registration-wrapper {
         max-height: 80%;
     }
 }
 
 @media (max-width: 1024px) {
-    .forgotPas-container {
+    .reg-container {
         grid-template-columns: 2% 96% 2%;
     }
 }
 
 @media (max-width: 750px) {
-    .forgotPas-container {
+    .reg-container {
         grid-template-columns: none;
     }
 
-    .forgotPas-wrapper {
+    .registration-wrapper {
         max-height: 100%;
         grid-column-start: 1;
         grid-column-end: 3;
     }
 
-    .forgotPas__side {
+    .registration__side {
         border-radius: 0;
     }
 
-    .forgotPas__left-side {
+    .registration__right-side {
+        display: none;
+    }
+
+    .registration__left-side {
         width: 100%;
     }
 
-    .forgotPas__right-side {
-        display: none;
+    .registration__titles-wrapper {
+        justify-content: space-between;
+    }
+
+    .registration__title-wrapper {
+        pointer-events: auto;
+        cursor: pointer;
     }
 
     .title_small-screen {
@@ -243,64 +246,45 @@
         border-bottom: 2px solid #F2D539;
     }
 
-    .forgotPas-footer {
+    .reg-footer {
         padding: 0 10px;
         grid-column-start: 1;
-    }
-
-    .forgotPas__back {
-        display: block;
     }
 }
 
 @media (max-width: 550px) {
-    .forgotPas__left-side {
-        justify-content: flex-start;
-    }
-
-    .forgotPas__title {
+    .registration__title {
         font-size: 20px;
         line-height: 24px;
     }
 
-    .forgotPas__inputs {
-        margin-top: auto;
-    }
-
-    .forgotPas__input-wrapper {
+    .registration__input-wrapper {
         padding: 8px 20px;
     }
 
-    .forgotPas__input-icon {
+    .registration__input-icon {
         width: 18px;
         height: 18px;
     }
 
-    .forgotPas__input {
+    .registration__input {
         font-size: 16px;
         line-height: 20px;
     }
 
-    .forgotPas__forgot-password {
+    .registration__button {
         margin-top: 10%;
-        font-size: 16px;
-        line-height: 20px;
-    }
-
-    .forgotPas__button {
-        margin-top: 10%;
-        margin-bottom: auto;
         padding: 7px 40px;
         font-size: 16px;
         line-height: 20px;
     }
 
-    .forgotPas-footer {
+    .reg-footer {
         font-size: 12px;
         line-height: 15px;
     }
 
-    .forgotPas-footer__github-wrapper {
+    .reg-footer__github-wrapper {
         width: 20px;
         height: 20px;
     }

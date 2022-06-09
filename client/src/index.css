@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #EAF3FF;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.spinner-container-regular {
+  margin-left: auto!important;
+  margin-right: auto!important;
+}
+
+.text-loading {
+  color: white;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link:visited {
+  color: inherit;
+}
+
+.button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: inherit;
+}
+
+.title__text {
+  font: inherit;
+}

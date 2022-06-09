@@ -6,9 +6,9 @@ import RightSide from "./RightSide";
 
 function Registration() {
     return (
-        <div className="forgotPas-container">
-            <div className="forgotPas-wrapper">
-                <div className="forgotPas">
+        <div className="auth-container">
+            <div className="authorization-wrapper">
+                <div className="authorization">
                     <LeftSide />
                     <RightSide />
                 </div>

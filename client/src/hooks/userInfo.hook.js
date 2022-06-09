@@ -26,6 +26,8 @@ export const useUserInfo = (token, userID) => {
             email: data.email,
             password: ''
         })
+
+        return userInfo;
     }, [request, token, userID]);
 
     return {userInfo, setUserInfo, getUserInfo};
