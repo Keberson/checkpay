@@ -1,11 +1,13 @@
 import {useState, useCallback} from 'react';
+import {useAuth} from "./auth.hook";
 
 export const useHTTP = (callback, deps) => {
-    const [loading, setLoading] = useState(false);
+    const {logout} = useAuth();
+    const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
     const request = useCallback(async (url, method = 'GET', body = null, headers = {}) => {
-        setLoading(true);
+        setIsLoading(true);
 
         try {
             if (body) {
@@ -16,21 +18,25 @@ export const useHTTP = (callback, deps) => {
             const response = await fetch(url, {method, body, headers});
             const data = await response.json();
 
-            if (!response.ok) {
-                throw new Error(data.message || 'Что-то пошло не так');
+            if (response.status === 401) {
+                logout();
             }
 
-            setLoading(false);
+            if (!response.ok) {
+                throw new Error(data.message || 'Something goes wrong');
+            }
+
+            setIsLoading(false);
 
             return data;
         } catch (e) {
-            setLoading(false);
+            setIsLoading(false);
             setError(e.message);
             throw e;
         }
-    }, []);
+    }, [logout]);
 
     const clearError = useCallback(() => setError(null), []);
 
-    return { loading, request, error, clearError };
+    return { isLoading, request, error, clearError };
 };

@@ -1,0 +1,320 @@
+.link {
+    text-decoration: none;
+}
+
+.link:visited {
+    color: inherit;
+}
+
+.button {
+    cursor: pointer;
+}
+
+.title__text {
+    font: inherit;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #EAF3FF;
+}
+
+.forgotPas-container {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 95% 5%;
+    grid-template-columns: 10% 80% 10%;
+    align-items: center;
+}
+
+.forgotPas-wrapper {
+    max-height: 70%;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    padding: 2% 0;
+    height: 100%;
+}
+
+.forgotPas {
+    height: 100%;
+    display: flex;
+}
+
+.forgotPas__side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 50px;
+}
+
+.forgotPas__left-side {
+    box-sizing: border-box;
+    padding: 5% 0;
+    width: 55%;
+    height: 100%;
+    background: #4F6DFD;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.forgotPas__right-side {
+    box-sizing: border-box;
+    padding: 15% 0;
+    width: 45%;
+    height: 100%;
+    background: #3F5EF0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.forgotPas__input-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.forgotPas__titles-wrapper {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.title_small-screen {
+    display: none;
+}
+
+.forgotPas__title {
+    text-align: center;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 44px;
+    color: #FFFFFF;
+}
+
+.forgotPas__subtitle {
+    max-width: 80%;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.forgotPas__inputs {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+}
+
+.forgotPas__form {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.forgotPas__input-wrapper {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 10px 24px;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.forgotPas__input {
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    outline: none;
+    border: none;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+}
+
+.forgotPas__input::placeholder {
+    color: #FAFAFA;
+}
+
+.forgotPas__forgot-password {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    text-decoration-line: underline;
+    color: #FFFFFF;
+}
+
+.forgotPas__button {
+    padding: 10px 80px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    color: #FFFFFF;
+    background: #38B49C;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+}
+
+.forgotPas-footer {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.forgotPas-footer__right-side {
+    display: flex;
+    align-items: center;
+}
+
+.forgotPas-footer__location {
+    display: none;
+    list-style: none;
+    position: absolute;
+    bottom: 5%;
+}
+
+.forgotPas-footer__location-active {
+    cursor: pointer;
+    margin-right: 30px;
+    display: flex;
+}
+
+.forgotPas-location-active__arrow {
+    margin-left: 5px;
+    width: 15px;
+    height: 10px;
+    stroke-width: 2;
+}
+
+.forgotPas-footer__github-wrapper {
+    display: flex;
+    width: 30px;
+    height: 30px;
+}
+
+.forgotPas-footer__github {
+    width: 100%;
+}
+
+@media (max-height: 900px) {
+    .forgotPas-wrapper {
+        max-height: 100%;
+    }
+}
+
+@media (max-height: 1130px) {
+    .forgotPas-wrapper {
+        max-height: 80%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .forgotPas-container {
+        grid-template-columns: 2% 96% 2%;
+    }
+}
+
+@media (max-width: 750px) {
+    .forgotPas-container {
+        grid-template-columns: none;
+    }
+
+    .forgotPas-wrapper {
+        max-height: 100%;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .forgotPas__side {
+        border-radius: 0;
+    }
+
+    .forgotPas__left-side {
+        width: 100%;
+    }
+
+    .forgotPas__right-side {
+        display: none;
+    }
+
+    .title_small-screen {
+        display: block;
+    }
+
+    .title_active {
+        border-bottom: 2px solid #F2D539;
+    }
+
+    .forgotPas-footer {
+        padding: 0 10px;
+        grid-column-start: 1;
+    }
+}
+
+@media (max-width: 550px) {
+    .forgotPas__left-side {
+        justify-content: flex-start;
+    }
+
+    .forgotPas__title {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .forgotPas__inputs {
+        margin-top: auto;
+    }
+
+    .forgotPas__input-wrapper {
+        padding: 8px 20px;
+    }
+
+    .forgotPas__input-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .forgotPas__input {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .forgotPas__forgot-password {
+        margin-top: 10%;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .forgotPas__button {
+        margin-top: 10%;
+        margin-bottom: auto;
+        padding: 7px 40px;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .forgotPas-footer {
+        font-size: 12px;
+        line-height: 15px;
+    }
+
+    .forgotPas-footer__github-wrapper {
+        width: 20px;
+        height: 20px;
+    }
+}
