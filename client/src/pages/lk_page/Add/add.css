@@ -5,16 +5,13 @@
     height: 100%;
     display: grid;
     grid-template-columns: 5fr 7fr;
-    grid-template-rows: 6fr 6fr;
     gap: 2%;
 }
 
-.main__side {
+.add-main__side {
     display: flex;
     align-items: center;
     justify-content: center;
-    grid-row-start: 1;
-    grid-row-end: 3;
 }
 
 .main__widget {

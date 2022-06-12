@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function StatisticsPageCategories({ category, onClickCallback }) {
-    const classes = "statistics-categories__element" + (category.isActive ? " active-category" : "");
+    const classes = "statistics-categories__element" + (category.isActive ? " statistics-active-category" : "");
 
     return (
         <li className={classes}>

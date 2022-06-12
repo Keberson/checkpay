@@ -4,8 +4,10 @@ import {useUserInfo} from "../../../hooks/userInfo.hook";
 import {useHTTP} from "../../../hooks/https.hook";
 import {toast} from "react-toastify";
 import {Spinner} from "react-spinner-animated";
+import {MenuContext} from "../../../context/menu.context";
 
 function SettingsPageForm() {
+    const {setIsChanges} = useContext(MenuContext);
     const {request, isLoading} = useHTTP();
     const {token, userID} = useContext(AuthContext);
     const {getUserInfo, userInfo, setUserInfo} = useUserInfo(token, userID);
@@ -35,12 +37,12 @@ function SettingsPageForm() {
             sendData[keys[i]] = data[i];
         }
 
-        console.log({...sendData})
-
         try {
             const data = await request(`/api/lk/setting/${userID}`, 'PUT', {...sendData}, {
                 authorization: `Bearer ${token}`
             });
+            setUserInfo({...userInfo});
+            setIsChanges(true);
             toast.success(data.message);
         } catch (error) {
             toast.error(error.message);

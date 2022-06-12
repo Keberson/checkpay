@@ -7,22 +7,6 @@ import './menu.css'
 function MenuBar() {
     let menuList = [
         {
-            title: "Menu",
-            icon: <svg className="item__icon" viewBox="0 0 32 20" fill="none"
-                       xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M0 1C0 0.447715 0.447715 0 1 0H31C31.5523 0 32 0.447715 32 1V1C32 1.55228 31.5523 2 31 2H1C0.447715 2 0 1.55228 0 1V1Z"
-                    fill="white"/>
-                <path
-                    d="M0 10C0 9.44772 0.447715 9 1 9H31C31.5523 9 32 9.44772 32 10V10C32 10.5523 31.5523 11 31 11H1C0.447715 11 0 10.5523 0 10V10Z"
-                    fill="white"/>
-                <path
-                    d="M0 19C0 18.4477 0.447715 18 1 18H31C31.5523 18 32 18.4477 32 19V19C32 19.5523 31.5523 20 31 20H1C0.447715 20 0 19.5523 0 19V19Z"
-                    fill="white"/>
-            </svg>,
-            specialClass: "nav__menu-item"
-        },
-        {
             title: "Home",
             icon: <svg className="item__icon" viewBox="0 0 32 32" fill="none"
                        xmlns="http://www.w3.org/2000/svg">

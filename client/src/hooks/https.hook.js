@@ -18,7 +18,7 @@ export const useHTTP = (callback, deps) => {
             const response = await fetch(url, {method, body, headers});
             const data = await response.json();
 
-            if (response.status === 401) {
+            if (response.status === 401 || data.isDeleted) {
                 logout();
             }
 

@@ -47,40 +47,73 @@
 .statistics-row__side {
     display: flex;
     flex-direction: column;
-    row-gap: 30px;
-    justify-content: space-around;
+    row-gap: 15px;
+    justify-content: space-evenly;
 }
 
 .statistics-side__graph {
     width: 100%;
     height: 100%;
-    background: #ffd6d6; /* Заглушка */
 }
 
-.statistics-widget__period {
-    display: grid;
-    grid-template-columns: 6fr 6fr;
-    column-gap: 20px;
+.statistics-graph__buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.statistics__graph {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: auto;
+}
+
+.statistics-graph__button {
+    box-sizing: border-box;
+    padding: 5px 30px;
+    border-radius: 10px;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 25px;
+    color: #FFFFFF;
+    background: #38B49C;
+}
+
+.statistics-graph__button:hover {
+    box-shadow: 0 0 60px -30px #363636 inset;
 }
 
 .statistics-widget__period-wrapper {
+    margin-left: 20px;
+    margin-top: 20px;
+    display: flex;
+    column-gap: 30px;
+}
+
+.statistics-widget__period-row {
     display: grid;
-    grid-template-columns: 8fr 4fr;
-    column-gap: 40px;
+    grid-template-columns: 10fr 2fr;
+    align-items: center;
+}
+
+.statistics-period__interval::-webkit-datetime-edit-text,
+.statistics-period__interval::-webkit-datetime-edit-month-field,
+.statistics-period__interval::-webkit-datetime-edit-day-field ,
+.statistics-period__interval::-webkit-datetime-edit-year-field {
+    display: none;
 }
 
 .statistics-period__interval {
-    padding-right: 10px;
     border: none;
     outline: none;
     text-align: center;
     box-sizing: border-box;
     font-style: normal;
     font-weight: 700;
-    font-size: 12px;
-    line-height: 44px;
+    font-size: 16px;
+    line-height: 25px;
     color: #223345;
-    background: #DEECF8;
     border-radius: 10px;
 }
 
@@ -209,14 +242,33 @@
     content: ' ₽';
 }
 
+.statistics-limits__warning {
+    color: #ff3f3f;
+}
 
-@media (max-width: 1060px) {
-    .statistics-widget__row {
-        column-gap: 10px;
+@media (max-width: 1142px) {
+    .statistics__graph {
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 1060px) {
+    .statistics__graph {
+        width: 300px;
+    }
+}
+
+@media (max-width: 880px) {
+    .statistics-widget__row {
+        column-gap: 20px;
+    }
+
+    .statistics-widget__period-wrapper, .statistics-widget__period {
+        column-gap: 20px;
+    }
+
     .statistics-profile__text {
         font-size: 12px;
     }
@@ -240,6 +292,12 @@
     .statistics-period__button, .statistics-analysis__title, .statistics-categories__button,
     .statistics-analysis__text, .statistics-limits-text, .statistics-limits-number {
         font-size: 16px;
+    }
+}
+
+@media (max-width: 730px) {
+    .statistics__graph {
+        width: 200px;
     }
 }
 
@@ -304,5 +362,9 @@
     .statistics-categories-wrapper {
         box-shadow: 0 0 4px rgb(0 0 0 / 25%);
         border-radius: 20px;
+    }
+
+    .statistics__graph {
+        width: 100%;
     }
 }

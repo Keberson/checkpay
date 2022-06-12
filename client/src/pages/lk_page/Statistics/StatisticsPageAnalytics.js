@@ -2,17 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 import StatisticsPageAnalyticsRow from "./StatisticsPageAnalyticsRow";
 
-function StatisticsPageAnalytics({ data }) {
+function StatisticsPageAnalytics({income, expenses}) {
     return (
         <div className="statistics-analysis-wrapper">
-            <StatisticsPageAnalyticsRow type="Income" value={data.income} />
-            <StatisticsPageAnalyticsRow type="Expenses" value={data.expenses} />
+            <StatisticsPageAnalyticsRow type="Income" value={income} />
+            <StatisticsPageAnalyticsRow type="Expenses" value={expenses} />
         </div>
     );
 }
 
 StatisticsPageAnalytics.propTypes = {
-    data: PropTypes.object.isRequired
+    income: PropTypes.number.isRequired,
+    expenses: PropTypes.number.isRequired
 }
 
 export default StatisticsPageAnalytics;

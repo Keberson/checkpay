@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {BrowserRouter} from "react-router-dom";
 import useRoutes from "./routes";
 import {AuthContext} from "./context/auth.context";
@@ -7,7 +7,7 @@ import {ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
-    const {token, userID, login, logout} = useAuth()
+    const {token, userID, login, logout} = useAuth();
     const isAuthenticated = !!token;
     const routes = useRoutes(isAuthenticated);
 

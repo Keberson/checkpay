@@ -11,7 +11,7 @@ function AddPage() {
             <div className="main__side">
                 <AddWidget setIsNeedRefresh={setIsNeedRefresh}/>
             </div>
-            <HistoryWidget isNeedRefresh={isNeedRefresh} setIsNeedRefresh={setIsNeedRefresh}/>
+            <HistoryWidget isNeedRefresh={isNeedRefresh} setIsNeedRefresh={setIsNeedRefresh} page="add" />
         </div>
     );
 }

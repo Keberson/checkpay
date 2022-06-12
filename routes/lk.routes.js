@@ -4,6 +4,7 @@ const config = require('config');
 const authMiddleware = require('../middleware/auth.middleware');
 const bcrypt = require("bcryptjs");
 const crypto = require("crypto");
+const sendMailTo = require("../mail/mail");
 
 const router = Router();
 
@@ -16,7 +17,8 @@ router.post(
             const hashedID = crypto.randomBytes(10).toString('hex');
 
             await workWithDB.insertData(
-                [`'${hashedID}'`, `'${type}'`, `'${date}'`, `'${category}'`, amount, `'${req.params.id}'`, comment ? `'${comment}'` : 'NULL'],
+                [`'${hashedID}'`, `'${type}'`, `'${date}'`, amount, `'${req.params.id}'`,
+                    category ? `'${category}'` : 'NULL', comment ? `'${comment}'` : 'NULL'],
                 config.get('usersHistoryTable')
             );
 
@@ -130,7 +132,22 @@ router.delete(
     '/setting/:id',
     authMiddleware,
     async (req, res) => {
-        // TODO(keberson): удаление аккаунта
+        const checkConfirmAccount = (await workWithDB.find('email, isConfirmed', 'id', req.params.id, config.get('usersTable')))[0];
+
+        if (checkConfirmAccount.isConfirmed) {
+            await sendMailTo(checkConfirmAccount.email, {
+                subject: 'Confirm deleting your account on Check Pay',
+                text: `To delete your account, follow the link http://localhost:5000/api/email/delete/${req.params.id}`, // URL SERVER
+            });
+
+            return res.json({message: 'To delete your account follow the link on your email account'});
+        }
+
+        await workWithDB.deleteData(config.get('usersHistoryTable'), `userID = '${req.params.id}'`);
+        await workWithDB.deleteData(config.get('userInfoTable'), `userID = '${req.params.id}'`);
+        await workWithDB.deleteData(config.get('usersTable'), `id = '${req.params.id}'`);
+
+        return res.json({isDeleted: true, message:'Your account has been successful deleted!'});
     });
 
 router.get(
@@ -158,7 +175,20 @@ router.get(
     authMiddleware,
     async (req, res) => {
         try {
-            console.log(req.query.start, req.query.end);
+            const data = (await workWithDB.find(
+                'type, date, amount, category',
+                'userID',
+                req.params.id,
+                config.get('usersHistoryTable')
+            ));
+
+            for (const dataKey in data) {
+                const tempDate = new Date(Date.parse(data[dataKey].date));
+                tempDate.setDate(tempDate.getDate() + 1);
+                data[dataKey].date = tempDate.toISOString();
+            }
+
+            return res.json([...data]);
         } catch (e) {
             console.log(e);
             return res.status(500).json({message: `Error: ${e}`})
@@ -184,9 +214,7 @@ router.get(
                 config.get('usersTable')
             ))[0].email;
 
-            return res.json({
-                data: data
-            });
+            return res.json({...data});
         } catch (e) {
             console.log(e);
             return res.status(500).json({message: `Error: ${e}`})

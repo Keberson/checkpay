@@ -3,37 +3,30 @@ import PropTypes from "prop-types";
 import Title from "../../../components/Title";
 import StatisticsPagePeriod from "./StatisticsPagePeriod";
 import StatisticsPageAnalytics from "./StatisticsPageAnalytics";
+import StatisticsPageGraph from "./StatisticsPageGraph";
 
-function StatisticsPagePeriodRow({ setStartPeriod, setEndPeriod, setIsSubmit }) {
+function StatisticsPagePeriodRow({period, data, setPeriod}) {
     return (
         <div className="statistics-widget__row statistics-row_period-graph">
             <div className="statistics-row__side">
                 <div className="statistics-side__part statistics-part__period">
-                    <Title classes="statistics-widget__title" value="Period" size={2} />
-                    <StatisticsPagePeriod startPeriod={(newValue) => setStartPeriod(newValue)}
-                                          endPeriod={(newValue) => setEndPeriod(newValue)}
-                                          submitCallback={(newValue) => setIsSubmit(newValue)}
-                    />
+                    <Title classes="statistics-widget__title" value="Period" size={2}/>
+                    <StatisticsPagePeriod period={period} setPeriod={setPeriod}/>
                 </div>
                 <div className="statistics-side__part statistics-part__analysis">
-                    <Title classes="statistics-widget__title" value="Income and Expenses" size={2} />
-                    <StatisticsPageAnalytics data={{
-                        income: 80000,
-                        expenses: 50000
-                    }} />
+                    <Title classes="statistics-widget__title" value="Income and Expenses" size={2}/>
+                    <StatisticsPageAnalytics income={data.income} expenses={data.expenses}/>
                 </div>
             </div>
-            <div className="statistics-row__side statistics-side__graph">
-
-            </div>
+            <StatisticsPageGraph />
         </div>
     );
 }
 
 StatisticsPagePeriodRow.propTypes = {
-    setStartPeriod: PropTypes.func.isRequired,
-    setEndPeriod: PropTypes.func.isRequired,
-    setIsSubmit: PropTypes.func.isRequired
+    period: PropTypes.object.isRequired,
+    data: PropTypes.object.isRequired,
+    setPeriod: PropTypes.func.isRequired
 }
 
 export default StatisticsPagePeriodRow;

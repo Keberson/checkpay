@@ -45,12 +45,17 @@ function AddWidget({setIsNeedRefresh}) {
     const submitForm = async (e) => {
         e.preventDefault();
         try {
-            const data = await request(`/api/lk/add/${userID}`, 'POST', {...form}, {
+            const sendData = form;
+            if (sendData.type !== 'Expenditure') {
+                sendData.category = '';
+                sendData.date += '-01';
+            }
+            const data = await request(`/api/lk/add/${userID}`, 'POST', {...sendData}, {
                 authorization: `Bearer ${token}`
             });
 
             setIsNeedRefresh(true);
-                toast.info(data.message);
+            toast.info(data.message);
         } catch (error) {
             toast.error(error.message);
         }
@@ -89,7 +94,7 @@ function AddWidget({setIsNeedRefresh}) {
                 </span>
                     </div>
                     <div className="home-add__inputs-wrapper">
-                        <AddWidgetForm form={form} setForm={setForm} submitForm={submitForm}/>
+                        <AddWidgetForm form={form} setForm={setForm} submitForm={submitForm} type={form.type}/>
                     </div>
                 </>
             }

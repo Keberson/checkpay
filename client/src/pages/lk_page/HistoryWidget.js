@@ -37,7 +37,8 @@ function HistoryWidget({isNeedRefresh, setIsNeedRefresh}) {
         <div className="main__widget widget_history">
             {
                 isLoading ?
-                    <Spinner center={false} width="25%" height="25%"/> :
+                    <Spinner center={false} width="25%" height="25%"/>
+                    :
                     <>
                         <div className="history__titles-wrapper">
                             <Title classes="history__title" value="Date" size={5}/>
@@ -52,7 +53,6 @@ function HistoryWidget({isNeedRefresh, setIsNeedRefresh}) {
                     </>
             }
         </div>
-
     );
 }
 

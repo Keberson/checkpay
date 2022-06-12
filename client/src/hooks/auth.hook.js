@@ -14,6 +14,7 @@ export const useAuth = () => {
     }, []);
 
     const logout = useCallback(() => {
+        console.log('hello');
         setToken(null);
         setUserID(null);
 

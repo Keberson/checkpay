@@ -1,26 +1,37 @@
-import React, {useEffect} from "react";
+import React from "react";
 import PropTypes from "prop-types";
-import {useHTTP} from "../../hooks/https.hook";
 
-function AddWidgetForm({form, setForm, submitForm}) {
+function AddWidgetForm({form, setForm, submitForm, type}) {
     const categoryList = ['Different', 'Transport', 'Food and Products', 'Clothes and Shoes', 'Entertainments', 'HCS'];
 
     return (
         <form className="home-add__form" onSubmit={submitForm}>
             <div className="home-add__input-wrapper">
-                <input type="date"
-                       className="home-add__input"
-                       placeholder="Date"
-                       value={form.date}
-                       onChange={(e) => setForm({...form, date: e.target.value})}
-                       required
-                />
+                {type !== 'Expenditure' &&
+                    <input type="month"
+                           className="home-add__input"
+                           placeholder="Date"
+                           value={form.date}
+                           onChange={(e) => setForm({...form, date: e.target.value})}
+                           required
+                    />
+
+                }
+                {type === 'Expenditure' &&
+                    <input type="date"
+                           className="home-add__input"
+                           placeholder="Date"
+                           value={form.date}
+                           onChange={(e) => setForm({...form, date: e.target.value})}
+                           required
+                    />}
             </div>
             <div className="home-add__input-wrapper">
                 <select className="home-add__input"
                         value={form.category}
                         onChange={(e) => setForm({...form, category: e.target.value})}
                         required
+                        disabled={type !== 'Expenditure'}
                 >
                     <option disabled>Category</option>
                     {categoryList.map((value => {
@@ -59,7 +70,8 @@ function AddWidgetForm({form, setForm, submitForm}) {
 AddWidgetForm.propTypes = {
     form: PropTypes.objectOf(PropTypes.any).isRequired,
     setForm: PropTypes.func.isRequired,
-    submitForm: PropTypes.func.isRequired
+    submitForm: PropTypes.func.isRequired,
+    type: PropTypes.string.isRequired
 }
 
 export default AddWidgetForm;

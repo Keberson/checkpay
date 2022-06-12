@@ -16,7 +16,7 @@ export const useUserInfo = (token, userID) => {
     const getUserInfo = useCallback(async () => {
         const data = (await request(`/api/lk/info/${userID}`, 'GET', null, {
             authorization: `Bearer ${token}`
-        })).data;
+        }));
 
         setUserInfo({
             name: (data.name) ? data.name : 'No data available',

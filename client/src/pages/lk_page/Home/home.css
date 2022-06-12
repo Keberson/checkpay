@@ -54,18 +54,18 @@
 }
 
 .home-statistics__block {
-    width: 50%;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     row-gap: 24px;
 }
 
 .home-statistics__graph {
-    width: 100%;
-    height: 100%;
-    background: #C3DEFFFF; /* заглушка */
+    width: 500px;
+    height: auto;
 }
 
 .home-statistics__title {
@@ -212,6 +212,13 @@
     }
 }
 
+@media (max-width: 1095px) {
+    .home-statistics__graph {
+        width: 400px;
+        height: auto;
+    }
+}
+
 @media (max-width: 960px) {
     .home-add__title-wrapper {
         display: none;
@@ -240,6 +247,13 @@
     }
 }
 
+@media (max-width: 771px) {
+    .home-statistics__graph {
+        width: 300px;
+        height: auto;
+    }
+}
+
 @media (max-width: 650px) {
     .home__main-wrapper {
         overflow-x: hidden;
@@ -262,5 +276,10 @@
 
     .home-statistics__title {
         line-height: 16px;
+    }
+
+    .home-statistics__graph {
+        width: 100%;
+        height: auto;
     }
 }

@@ -32,7 +32,7 @@ function Title({ classes, value, size }) {
 
 Title.propTypes = {
     classes: PropTypes.string.isRequired,
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    value: PropTypes.any,
     size: PropTypes.number
 }
 

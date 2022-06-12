@@ -4,10 +4,15 @@ import HistoryWidgetRowText from "./HistoryWidgetRowText";
 import HistoryWidgetRowDelete from "./HistoryWidgetRowDelete";
 
 function HistoryWidgetRow({ data, deleteMethod }) {
-    const date = (new Date(data.date_m + '.' + data.date_d + '.' + data.date_y)).toLocaleDateString();
+    let date;
+    if (data.type !== 'Expenditure') {
+        date = (new Date(data.date_m + '.' + data.date_d + '.' + data.date_y)).toDateString().split(' ');
+        date = `${date[1]} ${date[3]}`;
+    } else {
+        date = (new Date(data.date_m + '.' + data.date_d + '.' + data.date_y)).toLocaleDateString();
+    }
 
     const deleteRow = (e) => {
-        console.log(data);
         deleteMethod(data.id);
     }
 

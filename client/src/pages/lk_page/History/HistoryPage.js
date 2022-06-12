@@ -19,7 +19,7 @@ function HistoryPage() {
                 category: 'Entertainment',
                 amount: 1000,
                 comment: 'No comments'
-            }]} />
+            }]} isNeedRefresh={false}  setIsNeedRefresh={() => {}}/>
         </div>
     );
 }

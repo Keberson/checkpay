@@ -11,7 +11,7 @@ function HistoryWidgetRowText({ info }) {
 }
 
 HistoryWidgetRowText.propTypes = {
-    info: PropTypes.node.isRequired
+    info: PropTypes.any
 }
 
 export default HistoryWidgetRowText;

@@ -11,9 +11,9 @@ function Home() {
     return (
         <div className="home__main-wrapper">
             <ProfileWidget />
-            <StatisticsWidget />
+            <StatisticsWidget isNeedRefresh={isNeedRefresh}/>
             <AddWidget setIsNeedRefresh={setIsNeedRefresh}/>
-            <HistoryWidget isNeedRefresh={isNeedRefresh} setIsNeedRefresh={setIsNeedRefresh} />
+            <HistoryWidget isNeedRefresh={isNeedRefresh} setIsNeedRefresh={setIsNeedRefresh} page="home" />
         </div>
     );
 }
