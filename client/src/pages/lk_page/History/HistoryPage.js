@@ -7,19 +7,7 @@ function HistoryPage() {
     return (
         <div className="history__main-wrapper">
             <Title classes="history-widget__title" value="History" size={1} />
-            <HistoryWidget data={[{
-                date: '01.01.2022',
-                type: 'Income',
-                category: 'Salary',
-                amount: 1000,
-                comment: 'No comments'
-            }, {
-                date: '01.01.2022',
-                type: 'Expenditure',
-                category: 'Entertainment',
-                amount: 1000,
-                comment: 'No comments'
-            }]} isNeedRefresh={false}  setIsNeedRefresh={() => {}}/>
+            <HistoryWidget isNeedRefresh={false}  setIsNeedRefresh={() => {}}/>
         </div>
     );
 }
