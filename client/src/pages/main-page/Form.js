@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {useHTTP} from "../../hooks/https.hook";
+import {toast} from "react-toastify";
 
 function Form() {
     const {loading, request} = useHTTP();
@@ -39,9 +40,10 @@ function Form() {
         e.preventDefault();
         if (validName && validEmail && validMsg) {
             try {
-                await request('/api/home', 'POST', {...form});
+                const data = await request('/api/home', 'POST', {...form});
+                toast.success(data.message);
             } catch (error) {
-                console.log(error);
+                toast.error(error.message);
             }
         }
     };

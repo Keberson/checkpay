@@ -24,11 +24,11 @@ router.get(
 );
 
 router.get(
-    'delete/:id',
+    '/delete/:id',
     async (req, res) => {
         try {
             await workWithDB.deleteData(config.get('usersHistoryTable'), `userID = '${req.params.id}'`);
-            await workWithDB.deleteData(config.get('usersInfoTable'), `userID = '${req.params.id}'`);
+            await workWithDB.deleteData(config.get('userInfoTable'), `userID = '${req.params.id}'`);
             await workWithDB.deleteData(config.get('usersTable'), `id = '${req.params.id}'`);
 
             return res.json('Your account has been successful deleted!');

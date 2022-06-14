@@ -283,7 +283,7 @@ function StatisticsPage() {
                 <StatisticsPageCategories activeCategory={activeCategory}
                                           setActiveCategory={setActiveCategory}
                                           expenses={expensesCategory}/>
-                <StatisticsPageLimits amount={data.planned} isMoreLimit={data.planned < data.limit}/>
+                <StatisticsPageLimits amount={data.planned} isMoreLimit={data.planned === 0 ? false : data.planned < data.limit}/>
             </div>
         </div>
     );

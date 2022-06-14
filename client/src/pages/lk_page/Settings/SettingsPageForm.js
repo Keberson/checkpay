@@ -9,7 +9,7 @@ import {MenuContext} from "../../../context/menu.context";
 function SettingsPageForm() {
     const {setIsChanges} = useContext(MenuContext);
     const {request, isLoading} = useHTTP();
-    const {token, userID} = useContext(AuthContext);
+    const {token, userID, logout} = useContext(AuthContext);
     const {getUserInfo, userInfo, setUserInfo} = useUserInfo(token, userID);
 
     useEffect(() => {
@@ -44,6 +44,7 @@ function SettingsPageForm() {
             setUserInfo({...userInfo});
             setIsChanges(true);
             toast.success(data.message);
+            logout();
         } catch (error) {
             toast.error(error.message);
         }
