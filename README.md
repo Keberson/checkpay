@@ -59,13 +59,13 @@ npm run dev
 
 On the main page, the user can go to registration or authorization, get acquainted with the list of our advantages and send a message to the developers.
 
-<img src='https://github.com/Keberson/checkpay/blob/fullstack/docs/main.gif?raw=true'/>
+<img src='https://github.com/Keberson/checkpay/blob/fullstack/docs/main.gif?raw=true' alt="Main page GIF"/>
 
 # CheckPay Authorization and Registration
 
 To register, the user must enter an email, username and password. Email is required for password recovery. That is why, after registration, the user receives an email with a confirmation link.
 
-<img src='https://github.com/Keberson/checkpay/blob/fullstack/docs/reg.gif?raw=true'/>
+<img src='https://github.com/Keberson/checkpay/blob/fullstack/docs/reg.gif?raw=true' alt="Registration GIF"/>
 
 !["Confirm image"](https://github.com/Keberson/checkpay/blob/fullstack/docs/confirm.png?raw=true)
 
@@ -73,13 +73,13 @@ When logging in, the user specifies only the email and password.
 
 If the password has been forgotten, it can be restored by going to the appropriate section and entering your Email. A link with a new temporary password will be sent to it.
 
-<img src='https://github.com/Keberson/checkpay/blob/fullstack/docs/forgot-verifed.gif?raw=true'/>
+<img src='https://github.com/Keberson/checkpay/blob/fullstack/docs/forgot-verifed.gif?raw=true' alt="Forgot Password (verifed user) GIF "/>
 
 !["Forgot password image"](https://github.com/Keberson/checkpay/blob/fullstack/docs/forgot.png?raw=true)
 
 If the user has not had time to confirm his email, then he receives a temporary password in the notification.
 
-<img src='https://github.com/Keberson/checkpay/blob/fullstack/docs/forgot-no-verifed.gif?raw=true'/>
+<img src='https://github.com/Keberson/checkpay/blob/fullstack/docs/forgot-no-verifed.gif?raw=true' alt="Forgot Password (noverifed user) GIF"/>
 
 # CheckPay LK
 
@@ -102,7 +102,7 @@ The user can set one of the following types:
 For Expenditure, it is possible to select a category and set a specific date, for the rest, you can set the month and year.
 Planned is the setting of a limit for a certain month.
 
-!["LK Add types image"](docs\lk_add_types.png)
+!["LK Add types image"](https://github.com/Keberson/checkpay/blob/fullstack/docs/lk_add_types.png?raw=true)
 
 ## LK Statistics
 
