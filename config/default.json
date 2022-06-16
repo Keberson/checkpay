@@ -17,6 +17,6 @@
     "port": 465,
     "secure": true,
     "user": "checkpayservice@mail.ru",
-    "pass": "ENTER_"
+    "pass": "ENTER_PASSWORD"
   }
 }
