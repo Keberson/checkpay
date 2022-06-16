@@ -53,7 +53,7 @@ function StatisticsPageCategories({ activeCategory, setActiveCategory, expenses 
                 <Link classes="statistics-categories__arrow" link="#" onClickCallback={() => {
                     categoryList.map((value) => {
                         if (value.name === activeCategory) {
-                            setActiveCategory(categoryList[(value.id + 1) % categoryList.length].name)
+                            setActiveCategory(categoryList[(value.id) % categoryList.length].name)
                         }
 
                         return value;

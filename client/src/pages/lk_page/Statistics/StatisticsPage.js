@@ -213,9 +213,7 @@ function StatisticsPage() {
                     let tempDate = new Date(Date.parse(history[historyKey].date));
                     tempDate = new Date(tempDate.toISOString().slice(0, tempDate.toISOString().indexOf('T')));
                     if (history[historyKey].type === 'Expenditure') {
-                        console.log(history[historyKey].amount, tempDate)
                         if (tempDate >= beginMonth && tempDate <= endMonth) {
-
                             expenses[tempDate.getDate()] += Number(history[historyKey].amount);
                         }
                     }
