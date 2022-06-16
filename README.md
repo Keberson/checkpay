@@ -42,13 +42,13 @@ npm i
 ````
 In the configuration file, you must specify the backend port (frontend is started by default at 3000), host, password and MySQL database schema, as well as, if necessary, change the name of the tables. The database should have the following tables:
 + user_information
-!["User info table"](docs/user_info.png)
+!["User info table"](https://github.com/Keberson/checkpay/blob/fullstack/docs/user_info.png?raw=true)
 + users
-!["Users table"](docs/users.png)
+!["Users table"](https://github.com/Keberson/checkpay/blob/fullstack/docs/users.png?raw=true)
 + users_history
-!["Users history table"](docs/users_history.png)
+!["Users history table"](https://github.com/Keberson/checkpay/blob/fullstack/docs/users_history.png?raw=true)
 + users_message
-!["Users message table"](docs/users_msg.png)
+!["Users message table"](https://github.com/Keberson/checkpay/blob/fullstack/docs/users_msg.png?raw=true)
 
 Hooray, the project is ready to launch! Write the following command to run the frontend and backend parts:
 ```` 
@@ -67,7 +67,7 @@ To register, the user must enter an email, username and password. Email is requi
 
 <img src='https://github.com/Keberson/checkpay/blob/fullstack/docs/reg.gif?raw=true'/>
 
-!["Confirm image"](docs\confirm.png)
+!["Confirm image"](https://github.com/Keberson/checkpay/blob/fullstack/docs/confirm.png?raw=true)
 
 When logging in, the user specifies only the email and password. 
 
@@ -75,7 +75,7 @@ If the password has been forgotten, it can be restored by going to the appropria
 
 <img src='https://github.com/Keberson/checkpay/blob/fullstack/docs/forgot-verifed.gif?raw=true'/>
 
-!["Forgot password image"](docs\forgot.png)
+!["Forgot password image"](https://github.com/Keberson/checkpay/blob/fullstack/docs/forgot.png?raw=true)
 
 If the user has not had time to confirm his email, then he receives a temporary password in the notification.
 
@@ -87,12 +87,12 @@ If the user has not had time to confirm his email, then he receives a temporary 
 In the personal account, the user can add expenses, income and set a limit, view the history, as well as graphs and statistics by period, change personal data.
 
 The main page displays all the main widgets: User Information, Statistics with one of the graphs, Adding expenses and History.
-!["LK Home image"](docs\lk_home.png)
+!["LK Home image"](https://github.com/Keberson/checkpay/blob/fullstack/docs/lk_home.png?raw=true)
 
 ## LK Add
 On the add page, the user can use the corresponding widget and view the history.
 
-!["LK Add image"](docs\lk_add.png)
+!["LK Add image"](https://github.com/Keberson/checkpay/blob/fullstack/docs/lk_add.png?raw=true)
 
 The user can set one of the following types:
 + Income 
@@ -111,15 +111,15 @@ The user can set up a time interval, view statistics for it in general and by sp
 + graph by category for the given period
 + monthly expense graph
 
-!["LK Statistics image"](docs\lk_stat.png)
-!["LK Statistics graphs image"](docs\lk_stat_graphs.png)
+!["LK Statistics image"](https://github.com/Keberson/checkpay/blob/fullstack/docs/lk_stat.png?raw=true)
+!["LK Statistics graphs image"](https://github.com/Keberson/checkpay/blob/fullstack/docs/lk_stat_graphs.png?raw=true)
 
 ## LK History
 
 On this page, the user can view the entire history and delete the necessary lines.
-!["LK History image"](docs\lk_history.png)
+!["LK History image"](https://github.com/Keberson/checkpay/blob/fullstack/docs/lk_history.png?raw=true)
 
 ## LK Settings
 
 The user can add his first and last name, country of residence, change password or email.
-!["LK Settings image"](docs\lk_settings.png)
+!["LK Settings image"](https://github.com/Keberson/checkpay/blob/fullstack/docs/lk_settings.png?raw=true)
